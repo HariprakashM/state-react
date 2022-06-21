@@ -10,7 +10,10 @@ export default function App() {
   }
   let done=(id)=>{
     let itemindex=list.findIndex((obj)=>obj.id==id);
-    list[itemindex].strike=true;
+    if(list[itemindex].strike===true){
+    list[itemindex].strike=false;}
+    else if(list[itemindex].strike===false){
+    list[itemindex].strike=true;}
     setlist([...list]);
   }
   let remove=(id)=>{
